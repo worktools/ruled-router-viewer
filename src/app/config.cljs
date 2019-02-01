@@ -22,4 +22,4 @@
    :title "Ruled Router Viewer",
    :icon "http://cdn.tiye.me/logo/jimeng-360x360.png",
    :storage-key "ruled-router-viewer",
-   :upload-folder "tiye.me:repo/jimengio/ruled-router-viewerK/"})
+   :upload-folder "tiye.me:repo/jimengio/ruled-router-viewer/"})

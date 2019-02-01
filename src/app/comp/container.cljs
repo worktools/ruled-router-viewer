@@ -15,12 +15,19 @@
             [inflow-popup.comp.popup :refer [comp-popup]]
             [cljs.reader :refer [read-string]]))
 
+(defn generate-url [acc rules path]
+  (if (or (nil? rules) (empty? path))
+    acc
+    (let [rule (get rules (first path))]
+      (recur (str acc "/" (:path rule)) (:next rule) (rest path)))))
+
 (defcomp
  comp-navbar
- (states initial-data)
- (let [state (or (:data states) {:draft (js/JSON.stringify (clj->js initial-data) nil 2)})]
+ (states initial-data path)
+ (let [state (or (:data states) {:draft (js/JSON.stringify (clj->js initial-data) nil 2)})
+       url (generate-url "" initial-data path)]
    (div
-    {:style {:height 40, :padding 8, :border-bottom "1px solid #eee"}}
+    {:style (merge ui/row-middle {:height 40, :padding 8, :border-bottom "1px solid #eee"})}
     (cursor->
      :draft
      comp-popup
@@ -43,7 +50,9 @@
            :on-click (fn [e d! m!]
              (d! :set-data (js->clj (js/JSON.parse (:draft state)) :keywordize-keys true))
              (m! %cursor nil)
-             (toggle! m!))}))))))))
+             (toggle! m!))})))))
+    (=< 16 nil)
+    (<> url {:font-size 12, :font-family ui/font-code, :color (hsl 0 0 70)}))))
 
 (defcomp
  comp-container
@@ -51,7 +60,7 @@
  (let [store (:store reel), states (:states store)]
    (div
     {:style (merge ui/global ui/fullscreen ui/column)}
-    (comp-navbar states (:data store))
+    (comp-navbar states (:data store) (or (:path store) []))
     (comp-viewer (:data store) (or (:path store) []))
     (when dev? (cursor-> :reel comp-reel states reel {}))
     (when dev? (comp-inspect "store" store {:bottom 0})))))
