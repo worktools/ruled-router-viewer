@@ -7,4 +7,4 @@
     :set-data (assoc store :data op-data)
     :set-path (assoc store :path op-data)
     :hydrate-storage op-data
-    store))
+    (do (js/console.warn "Unknown op:" op) store)))

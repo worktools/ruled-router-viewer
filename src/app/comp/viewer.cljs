@@ -40,8 +40,7 @@
 (defn decorate-rules [acc rules path level original-path]
   (if (nil? rules)
     acc
-    (let [rule (get rules (first path))
-          this-path (vec (take (do (println level) level) original-path))]
+    (let [rule (get rules (first path)), this-path (vec (take level original-path))]
       (if (empty? path)
         (conj acc [level (comp-rules rules this-path nil)])
         (recur
