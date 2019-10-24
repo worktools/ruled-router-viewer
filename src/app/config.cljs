@@ -15,11 +15,9 @@
       :else true)))
 
 (def site
-  {:dev-ui "http://localhost:8100/main.css",
-   :release-ui "http://cdn.tiye.me/favored-fonts/main.css",
+  {:dev-ui "http://localhost:8100/main-fonts.css",
+   :release-ui "http://cdn.tiye.me/favored-fonts/main-fonts.css",
    :cdn-url "http://cdn.tiye.me/ruled-router-viewer/",
-   :cdn-folder "tiye.me:cdn/ruled-router-viewer",
    :title "Ruled Router Viewer",
    :icon "http://cdn.tiye.me/logo/jimeng-360x360.png",
-   :storage-key "ruled-router-viewer",
-   :upload-folder "tiye.me:repo/jimengio/ruled-router-viewer/"})
+   :storage-key "ruled-router-viewer"})

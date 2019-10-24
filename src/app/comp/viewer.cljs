@@ -18,7 +18,8 @@
   {:style {:overflow :auto,
            :max-height "calc(100% - 80px)",
            :margin "auto 4",
-           :border "1px solid #eee"}}
+           :border "1px solid #eee",
+           :flex-shrink 0}}
   (->> rules
        (map-indexed
         (fn [idx rule]
@@ -26,22 +27,23 @@
            (div
             {:on-click (fn [e d! m!] (d! :set-path (conj path idx))),
              :style (merge
-                     {:border-bottom "1px solid #eee", :padding 8, :cursor :pointer}
+                     {:border-bottom "1px solid #eee", :padding "4px 8px", :cursor :pointer}
                      (if (= selected-idx idx) {:background-color (hsl 0 0 90)}))}
             (div
-             {:style (merge ui/row-parted {:font-family ui/font-fancy})}
-             (<> (or (:name rule) "-"))
+             {:style (merge ui/row-parted {})}
+             (span
+              {}
+              (<> (:path rule) {:font-family ui/font-code, :font-size 13})
+              (=< 8 nil)
+              (<> (or (:name rule) "-") {:color (hsl 0 0 80), :font-size 12}))
              (=< 16 nil)
-             (if (some? (:next rule)) (<> (count (:next rule)))))
-            (div
-             {:style {:color (hsl 0 0 80), :line-height "20px"}}
-             (<> (pr-str (:path rule)))))])))))
+             (if (some? (:next rule))
+               (<> (count (:next rule)) {:font-family ui/font-fancy, :color (hsl 0 0 80)}))))])))))
 
 (defn decorate-rules [acc rules path level original-path]
   (if (nil? rules)
     acc
-    (let [rule (get rules (first path))
-          this-path (vec (take (do (println level) level) original-path))]
+    (let [rule (get rules (first path)), this-path (vec (take level original-path))]
       (if (empty? path)
         (conj acc [level (comp-rules rules this-path nil)])
         (recur
