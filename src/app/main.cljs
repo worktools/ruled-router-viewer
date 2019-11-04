@@ -9,7 +9,8 @@
             [reel.schema :as reel-schema]
             [cljs.reader :refer [read-string]]
             [app.config :as config]
-            [cumulo-util.core :refer [repeat!]]))
+            [cumulo-util.core :refer [repeat!]]
+            [shadow.resource :refer [inline]]))
 
 (defonce *reel
   (atom (-> reel-schema/reel (assoc :base schema/store) (assoc :store schema/store))))
@@ -38,7 +39,11 @@
   (.addEventListener js/window "beforeunload" persist-storage!)
   (repeat! 60 persist-storage!)
   (let [raw (.getItem js/localStorage (:storage-key config/site))]
-    (when (some? raw) (dispatch! :hydrate-storage (read-string raw))))
+    (when (some? raw)
+      (dispatch! :hydrate-storage (read-string raw))
+      (dispatch!
+       :set-data
+       (js->clj (js/JSON.parse (inline "rules.json")) :keywordize-keys true))))
   (println "App started."))
 
 (defn reload! []

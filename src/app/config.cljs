@@ -16,8 +16,8 @@
 
 (def site
   {:dev-ui "http://localhost:8100/main-fonts.css",
-   :release-ui "http://cdn.tiye.me/favored-fonts/main-fonts.css",
-   :cdn-url "http://cdn.tiye.me/ruled-router-viewer/",
+   :release-ui "https://cdn.tiye.me/favored-fonts/main-fonts.css",
+   :cdn-url "https://fr.jimu.io/cdn/ruled-router-viewer/",
    :title "Ruled Router Viewer",
-   :icon "http://cdn.tiye.me/logo/jimeng-360x360.png",
+   :icon "https://cdn.tiye.me/logo/jimeng-360x360.png",
    :storage-key "ruled-router-viewer"})

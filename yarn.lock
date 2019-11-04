@@ -153,9 +153,9 @@ constants-browserify@^1.0.0:
   integrity sha1-wguW2MYXdIqvHBYCF2DNJ/y4y3U=
 
 core-js@^3.1.3:
-  version "3.3.5"
-  resolved "https://registry.npmjs.org/core-js/-/core-js-3.3.5.tgz#58d20f48a95a07304b62ff752742b82b56431ed8"
-  integrity sha512-0J3K+Par/ZydhKg8pEiTcK/9d65/nqJOzY62uMkjeBmt05fDOt/khUVjDdh8TpeIuGQDy1yLDDCjiWN/8pFIuw==
+  version "3.3.6"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.3.6.tgz#6ad1650323c441f45379e176ed175c0d021eac92"
+  integrity sha512-u4oM8SHwmDuh5mWZdDg9UwNVq5s1uqq6ZDLLIs07VY+VJU91i3h4f3K/pgFvtUQPGdeStrZ+odKyfyt4EnKHfA==
 
 core-util-is@~1.0.0:
   version "1.0.2"
@@ -672,10 +672,10 @@ shadow-cljs-jar@1.3.1:
   resolved "https://registry.npmjs.org/shadow-cljs-jar/-/shadow-cljs-jar-1.3.1.tgz#a5f8ab7664b40e11345837e4c6bce8e0ac9b2cc3"
   integrity sha512-IJSm4Gfu/wWDsOQ0wNrSxuaGdjzsd78us+3bop3cpWsoO2Igdu6VIBItYrZHRRBKl5LIZKXfnSh/2eWG3C1EFw==
 
-shadow-cljs@^2.8.68:
-  version "2.8.68"
-  resolved "https://registry.npmjs.org/shadow-cljs/-/shadow-cljs-2.8.68.tgz#d913bdd3b4eb454ed06e3550fd286e42464a1c14"
-  integrity sha512-ifmluCRXAeLPxDLCYeH/R8b8Q+oVCOQtO6ayYkJursHxvy7EP5WWl3VmiyMRVaHahg1Cc2TQbCM4N/C7doQTRw==
+shadow-cljs@^2.8.69:
+  version "2.8.69"
+  resolved "https://registry.npmjs.org/shadow-cljs/-/shadow-cljs-2.8.69.tgz#a646926ce0ba2b0b0f1086925a1048fdd69ebb08"
+  integrity sha512-lLAJ1uscKNmm+VBwZXM+YYHx9N/YzcKicqFtuVMID//AnOi8zlzEPwFjUjGWvzxZqrh6GLxzcAr18DR87Vo2tQ==
   dependencies:
     mkdirp "^0.5.1"
     node-libs-browser "^2.0.0"

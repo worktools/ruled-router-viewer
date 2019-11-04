@@ -1,6 +1,6 @@
 
-{:host "tiye.me"
+{:host "fr.jimu.io"
  :uploads [{:from "dist/*"
-            :to "cdn/ruled-router-viewer/"}
+            :to "/usr/static/jimengio/cdn/ruled-router-viewer/"}
            {:from "dist/{index.html,manifest.json}"
-            :to "repo/jimengio/ruled-router-viewer/"}]}
+            :to "/usr/static/jimengio/ruled-router-viewer/"}]}
