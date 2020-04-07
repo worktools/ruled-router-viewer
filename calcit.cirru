@@ -1806,10 +1806,7 @@
                               |y $ {} (:type :expr) (:by |rJG4IHzWf) (:at 1572495004226) (:id |Oq0nzHHkS4)
                                 :data $ {}
                                   |T $ {} (:type :leaf) (:by |rJG4IHzWf) (:at 1572495006383) (:text |:append-html) (:id |Oq0nzHHkS4leaf)
-                                  |j $ {} (:type :expr) (:by |rJG4IHzWf) (:at 1572495006708) (:id |WnupE_ibt7)
-                                    :data $ {}
-                                      |T $ {} (:type :leaf) (:by |rJG4IHzWf) (:at 1572495007475) (:text |slurp) (:id |EifhUxiUc)
-                                      |j $ {} (:type :leaf) (:by |rJG4IHzWf) (:at 1572495012290) (:text "|\"./entry/ga.html") (:id |vVSm3dgKi)
+                                  |j $ {} (:type :leaf) (:by |rJG4IHzWf) (:at 1586236882179) (:text |nil) (:id |u41hxfmqKt)
         :proc $ {} (:type :expr) (:time 1499755354983) (:id |SyOzgodKq6rb) (:data $ {})
       |app.schema $ {}
         :ns $ {} (:type :expr) (:time 1499755354983) (:id |rJxieodtqarW)
